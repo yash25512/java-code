@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        ArrayList<Integer> list= new ArrayList<>();
+        list.add(1);
+        list.add(3);
+        list.add(4);
+        System.out.println(list);
+        // get element operation 
+        int element = list.get(2);
+        System.out.println(element);
+        
+        //remove 
+       // list.remove(2);
+        //System.out.println(list);
+        
+        //set element at index
+        list.set(2,10);
+        System.out.println(list);
+        
+        //contains
+        System.out.println(list.contains(1));
+    
+    // add value
+    list.add(1,19);
+    System.out.println(list);
+    
+    System.out.println(list.size());
+    
+    //print the array list
+    for(int i=0;i<list.size();i++){
+        System.out.print(list.get(i));
+    }
+    System.out.println();
+    }
+}
