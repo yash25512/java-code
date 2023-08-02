@@ -95,7 +95,7 @@ class LinkedList {
         size--;
         return val;
     }
-    public int iterativesearch(int key){
+    public int iterativesearch(int key){ //O(n)
         int i=0;
         node temp= head;
         while(temp!=null){
