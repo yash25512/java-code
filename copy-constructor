@@ -1,0 +1,32 @@
+//copy constructor
+class HelloWorld {
+    public static void main(String[] args) {
+        student s1=new student();
+        s1.name-"yash";
+        s1.roll=123;
+        s1.password="123e";
+        
+        student s2=new student(s1);
+        s2,password="xyz";
+        
+        
+    }
+}
+//in copy constructor we create our own constructor in which we copy the obj1 property to another object
+    class student{
+        String name;
+        int roll;
+        String password;
+    
+    student(){
+        System.out.println("this is a constructor");
+    }
+    //copy constructor
+    student(student s1){
+        this.name=s1.name;
+        this.roll=s1.roll;
+    }
+    student(int roll){
+        this.roll=roll;
+    }
+    }
