@@ -1,0 +1,13 @@
+abstract class yash{
+    
+}
+class harsh extends yash{
+    
+}
+
+
+class HelloWorld {
+    public static void main(String[] args) {
+        yash b=new harsh();
+    }
+}
