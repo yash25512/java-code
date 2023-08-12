@@ -1,0 +1,25 @@
+//multi level inheritance
+class Oops{
+    public static void main (String [] args){
+        dog dobby=new dog();
+        dobby.eat();
+        dobby.legs=4;
+    }
+}
+//base class (parent child)
+class animal{
+    String volor;
+    void eat(){
+        System.out.println("animal eats ");
+    }
+    void breathe(){
+        System.out.println("breatheee");
+    }
+}
+//derived class(sub class)
+class mammal extends animal{
+    int legs;
+}
+class dog extends mammal{
+    String breed;
+}
