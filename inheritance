@@ -1,0 +1,23 @@
+class Oops{
+    public static void main (String [] args){
+        fish shark= new fish();
+        shark.eat();
+    }
+}
+//base class (parent child)
+class animal{
+    String volor;
+    void eat(){
+        System.out.println("animal eats ");
+    }
+    void breathe(){
+        System.out.println("breatheee");
+    }
+}
+//derived class(sub class)
+class fish extends animal{
+    int gills;
+    void swim (){
+        System.out.println("swimssss");
+    }
+}
