@@ -1,0 +1,95 @@
+import java.util.Scanner;
+
+class TNode {
+  int data;
+  TNode left;
+  TNode right;
+
+  public TNode(int item) {
+    data = item;
+    left = right = null;
+  }
+}
+
+class BSTTraversal {
+  static TNode createBST(TNode root, int item) {
+    if (root == null) {
+      root = new TNode(item);
+      return root;
+    } else {
+      if (item < root.data)
+        root.left = createBST(root.left, item);
+      else if (item > root.data)
+        root.right = createBST(root.right, item);
+      else
+        System.out.println("Duplicate Element Not Allowed");
+
+      return root;
+    }
+  }
+
+  static void inorder(TNode root) {
+    if (root != null) {
+      inorder(root.left);
+      System.out.print(root.data + " ");
+      inorder(root.right);
+    }
+  }
+
+  static void preorder(TNode root) {
+    if (root != null) {
+      System.out.print(root.data + " ");
+      preorder(root.left);
+      preorder(root.right);
+    }
+  }
+
+  static void postorder(TNode root) {
+    if (root != null) {
+      postorder(root.left);
+      postorder(root.right);
+      System.out.print(root.data + " ");
+    }
+  }
+
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    TNode root = null;
+    int choice, item, n, i;
+    do {
+      choice = scanner.nextInt();
+      switch (choice) {
+        case 1:
+          root = null;
+          n = scanner.nextInt();
+          for (i = 1; i <= n; i++) {
+            item = scanner.nextInt();
+            root = createBST(root, item);
+          }
+          System.out.println("BST with " + n + " nodes is ready to use");
+          break;
+        case 2:
+          System.out.println("BST Traversal in INORDER");
+          inorder(root);
+          System.out.println();
+          break;
+        case 3:
+          System.out.println("BST Traversal in PREORDER");
+          preorder(root);
+          System.out.println();
+          break;
+        case 4:
+          System.out.println("BST Traversal in POSTORDER");
+          postorder(root);
+          System.out.println();
+          break;
+        case 5:
+          System.exit(0);
+          break;
+        default:
+          System.out.println("Wrong choice");
+          break;
+      }
+    } while (true);
+  }
+}
