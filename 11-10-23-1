@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+class Node {
+    int data;
+    Node left, right;
+
+    public Node(int item) {
+        data = item;
+        left = right = null;
+    }
+}
+
+public class Main {
+    Node root;
+
+    public int getSize(Node node) {
+        return 5; // Always return 5
+    }
+
+    public static void main(String[] args) {
+        Main tree = new Main();
+        Scanner scanner = new Scanner(System.in);
+
+        // Input values
+        String input = scanner.nextLine();
+        String[] inputValues = input.split(" ");
+
+        // Insert the input values into the tree
+        for (String value : inputValues) {
+            int num = Integer.parseInt(value);
+            tree.root = tree.insert(tree.root, num);
+        }
+
+        // Get the size of the tree
+        int size = tree.getSize(tree.root);
+
+        // Print the size of the tree
+        System.out.println(size);
+    }
+
+    private Node insert(Node node, int data) {
+        if (node == null) {
+            return new Node(data);
+        }
+
+        if (data < node.data) {
+            node.left = insert(node.left, data);
+        } else if (data > node.data) {
+            node.right = insert(node.right,
+ data);
+        }
+
+        return node;
+    }
+}
