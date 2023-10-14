@@ -1,0 +1,22 @@
+class HelloWorld {
+    public static void VowelsCount(String str) {
+        int vowels = 0;
+        int consonants = 0;
+        for (int k = 0; k < str.length(); k++) {
+            char c = str.charAt(k);
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                vowels++;
+            } else if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+                // Check if the character is a letter (vowel or consonant)
+                consonants++;
+            }
+        }
+        System.out.println("Vowels: " + vowels);
+        System.out.println("Consonants: " + consonants);
+    }
+
+    public static void main(String[] args) {
+        String str = "yashnamdev";
+        VowelsCount(str);
+    }
+}
